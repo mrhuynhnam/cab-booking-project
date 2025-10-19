@@ -59,7 +59,7 @@ graph TD
     class C1,C2,C3,C4,C5 service
     class D1,D2,D3,D4,D5 db
 ```
-
+---
 ### 🔍 Giải thích sơ đồ
 - **ReactJS UI**: Giao diện người dùng, nơi người dùng đặt xe và theo dõi chuyến đi.  
 - **API Gateway**: Cửa ngõ trung gian điều phối các request từ frontend tới các service backend, đồng thời xác thực JWT.  
