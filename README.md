@@ -41,6 +41,19 @@ Kiến trúc hệ thống được thiết kế theo **mô hình Microservices**
    . Trung gian giữa frontend và các microservice backend.
    . Quản lý routing, xác thực token và cân bằng tải.
 
+💡 Chức năng chính
+
+1. Người dùng:
+   . Đăng nhập / Đăng ký tài khoản.
+   . Đặt xe, xem vị trí tài xế trên bản đồ.
+   . Nhận thông báo khi tài xế nhận chuyến.
+   . Thanh toán sau chuyến đi.
+2. Tài xế:
+   . Đăng nhập, bật/tắt chế độ sẵn sàng nhận chuyến.
+   . Nhận thông tin chuyến đi, cập nhật trạng thái (đang đón, đã đón, hoàn thành).
+3. Hệ thống quản trị:
+   . Xem thống kê: số chuyến, doanh thu, tài xế hoạt động, người dùng mới,...
+
 ---
 
 ## 3.2. Kiến trúc tổng thể của hệ thống
