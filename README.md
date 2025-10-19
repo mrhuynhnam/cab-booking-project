@@ -28,7 +28,7 @@ Hệ thống được chia thành hai phần chính:
 ---
 
 ## 3.3. Sơ đồ kiến trúc hệ thống (Block Diagram)
-
+```mermaid
 graph TD
     A[🧑‍💻 ReactJS UI<br/>(Ứng dụng khách hàng & tài xế)] -->|HTTP / HTTPS| B[🚪 API Gateway<br/>(Node.js / Nginx)]
 
