@@ -11,6 +11,16 @@ Kiến trúc hệ thống được thiết kế theo **mô hình Microservices**
 - Dễ dàng tích hợp thêm **chức năng mới** mà không ảnh hưởng đến toàn bộ hệ thống.  
 - Đảm bảo **hiệu năng cao**, **phản hồi nhanh**, **dễ mở rộng theo chiều ngang (scaling)**.
 
+🏗️ Yêu cầu kỹ thuật
+
+- Frontend: React.js (SPA, giao diện người dùng thân thiện, realtime cập nhật trạng thái chuyến đi)
+- Backend: Node.js + Express.js
+- Kiến trúc: Microservices (mỗi service đảm nhiệm một chức năng riêng biệt)
+- Cơ sở dữ liệu: MongoDB hoặc PostgreSQL
+- Giao tiếp giữa các service: REST API hoặc Message Queue (Kafka/RabbitMQ – nếu có thể)
+- Authentication: JWT hoặc OAuth 2.0
+- Triển khai: Docker / Docker Compose / Docker Swarm
+
 ---
 
 ## 3.2. Kiến trúc tổng thể của hệ thống
