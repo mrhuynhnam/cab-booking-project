@@ -176,9 +176,9 @@ sequenceDiagram
 
    . Khi chuyến đi hoàn tất, Ride Service gửi yêu cầu sang Payment Service để:
    
-   . Tính giá cước dựa trên quãng đường (Google Maps API hoặc công thức giả lập).
-   
-   . Ghi nhận thanh toán (giả lập hoặc thực tế qua MoMo/Stripe).
+      . Tính giá cước dựa trên quãng đường (Google Maps API hoặc công thức giả lập).
+      
+      . Ghi nhận thanh toán (giả lập hoặc thực tế qua MoMo/Stripe).
    
    . Payment Service phản hồi kết quả lại Ride Service → trả về cho người dùng.
 
@@ -196,11 +196,11 @@ sequenceDiagram
    
    . API Gateway chịu trách nhiệm:
    
-   . Xác thực (JWT token)
-   
-   . Gộp và định tuyến request đến đúng service
-   
-   . Cân bằng tải (load balancing)
+      . Xác thực (JWT token)
+      
+      . Gộp và định tuyến request đến đúng service
+      
+      . Cân bằng tải (load balancing)
 
 ⚙️ 6. Triển khai và mở rộng
 
