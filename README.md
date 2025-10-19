@@ -205,7 +205,7 @@ sequenceDiagram
 ⚙️ 6. Triển khai và mở rộng
 
    . Mỗi service được đóng gói trong Docker container → quản lý bằng Docker Compose.
-   
+   . Hệ thống được vận hành trên Docker Swarm
    . Khi hệ thống mở rộng:
    
       . Có thể tách các service sang server riêng.
