@@ -21,6 +21,26 @@ Kiến trúc hệ thống được thiết kế theo **mô hình Microservices**
 - Authentication: JWT hoặc OAuth 2.0
 - Triển khai: Docker / Docker Compose / Docker Swarm
 
+⚙️ Các thành phần Microservices đề xuất
+
+1. User Service
+   . Đăng ký, đăng nhập, quản lý thông tin người dùng (khách hàng & tài xế).
+   . Xác thực và phân quyền (role-based).
+2. Ride Service
+   . Xử lý logic đặt xe: tìm tài xế gần nhất, tạo yêu cầu chuyến đi, cập nhật trạng thái chuyến.
+   . Theo dõi vị trí theo thời gian thực (WebSocket hoặc MQTT).
+3. Driver Service
+   . Quản lý hồ sơ tài xế, trạng thái (online/offline), vị trí hiện tại.
+   . Nhận hoặc từ chối chuyến đi.
+4. Payment Service
+   . Tính toán chi phí chuyến đi dựa trên quãng đường, thời gian.
+   . Tích hợp thanh toán (giả lập hoặc sử dụng cổng thật như Stripe, MoMo sandbox).
+5. Notification Service
+   . Gửi thông báo realtime (socket.io hoặc email/SMS giả lập).
+6. Gateway Service (API Gateway)
+   . Trung gian giữa frontend và các microservice backend.
+   . Quản lý routing, xác thực token và cân bằng tải.
+
 ---
 
 ## 3.2. Kiến trúc tổng thể của hệ thống
