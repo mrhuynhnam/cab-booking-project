@@ -208,11 +208,11 @@ sequenceDiagram
    
    . Khi hệ thống mở rộng:
    
-   . Có thể tách các service sang server riêng.
+      . Có thể tách các service sang server riêng.
    
-   . Sử dụng Redis để cache session và quản lý vị trí realtime.
-   
-   . Thêm Monitoring Service để theo dõi log và hiệu năng.
+      . Sử dụng Redis để cache session và quản lý vị trí realtime.
+      
+      . Thêm Monitoring Service để theo dõi log và hiệu năng.
 ---
 
 ## 3.5. Tóm tắt kiến trúc
