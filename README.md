@@ -153,66 +153,48 @@ sequenceDiagram
 ```
 
 🔁 Giải thích luồng dữ liệu
+
 🧭 1. Người dùng đặt xe
 
-Người dùng (khách hàng) mở ứng dụng ReactJS, chọn điểm đón và điểm đến.
-
-Ứng dụng gửi HTTP request đến API Gateway → chuyển tiếp đến Ride Service.
-
-Ride Service kiểm tra người dùng (qua User Service để xác thực token JWT).
-
-Sau đó, hệ thống tìm tài xế gần nhất bằng cách truy vấn Driver Service (theo vị trí GPS).
+   . Người dùng (khách hàng) mở ứng dụng ReactJS, chọn điểm đón và điểm đến.
+   . Ứng dụng gửi HTTP request đến API Gateway → chuyển tiếp đến Ride Service.
+   . Ride Service kiểm tra người dùng (qua User Service để xác thực token JWT).
+   . Sau đó, hệ thống tìm tài xế gần nhất bằng cách truy vấn Driver Service (theo vị trí GPS).
 
 🚗 2. Tài xế nhận chuyến
 
-Khi Ride Service tạo yêu cầu chuyến đi, Notification Service gửi thông báo realtime đến các tài xế trong khu vực (qua WebSocket).
-
-Tài xế chọn “Nhận chuyến” → thông tin được gửi lại API Gateway → Ride Service.
-
-Ride Service cập nhật trạng thái chuyến đi (pending → accepted → in-progress).
+   . Khi Ride Service tạo yêu cầu chuyến đi, Notification Service gửi thông báo realtime đến các tài xế trong khu vực (qua WebSocket).
+   . Tài xế chọn “Nhận chuyến” → thông tin được gửi lại API Gateway → Ride Service.
+   . Ride Service cập nhật trạng thái chuyến đi (pending → accepted → in-progress).
 
 💳 3. Thanh toán chuyến đi
 
-Khi chuyến đi hoàn tất, Ride Service gửi yêu cầu sang Payment Service để:
-
-Tính giá cước dựa trên quãng đường (Google Maps API hoặc công thức giả lập).
-
-Ghi nhận thanh toán (giả lập hoặc thực tế qua MoMo/Stripe).
-
-Payment Service phản hồi kết quả lại Ride Service → trả về cho người dùng.
+   . Khi chuyến đi hoàn tất, Ride Service gửi yêu cầu sang Payment Service để:
+   . Tính giá cước dựa trên quãng đường (Google Maps API hoặc công thức giả lập).
+   . Ghi nhận thanh toán (giả lập hoặc thực tế qua MoMo/Stripe).
+   . Payment Service phản hồi kết quả lại Ride Service → trả về cho người dùng.
 
 📢 4. Thông báo và theo dõi realtime
 
-Cả khách hàng và tài xế được cập nhật trạng thái chuyến đi qua Notification Service (WebSocket hoặc MQTT).
-
-Mọi sự kiện như “Tài xế đến nơi”, “Bắt đầu chuyến”, “Kết thúc” đều được gửi tới frontend ReactJS để hiển thị tức thì.
+   . Cả khách hàng và tài xế được cập nhật trạng thái chuyến đi qua Notification Service (WebSocket hoặc MQTT).
+   . Mọi sự kiện như “Tài xế đến nơi”, “Bắt đầu chuyến”, “Kết thúc” đều được gửi tới frontend ReactJS để hiển thị tức thì.
 
 🧱 5. Quản lý dữ liệu và tích hợp
 
-Mỗi service có cơ sở dữ liệu riêng biệt, tránh phụ thuộc lẫn nhau (theo nguyên tắc microservices).
-
-Các service chỉ giao tiếp qua REST API hoặc Message Queue.
-
-API Gateway chịu trách nhiệm:
-
-Xác thực (JWT token)
-
-Gộp và định tuyến request đến đúng service
-
-Cân bằng tải (load balancing)
+   . Mỗi service có cơ sở dữ liệu riêng biệt, tránh phụ thuộc lẫn nhau (theo nguyên tắc microservices).
+   . Các service chỉ giao tiếp qua REST API hoặc Message Queue.
+   . API Gateway chịu trách nhiệm:
+   . Xác thực (JWT token)
+   . Gộp và định tuyến request đến đúng service
+   . Cân bằng tải (load balancing)
 
 ⚙️ 6. Triển khai và mở rộng
 
-Mỗi service được đóng gói trong Docker container → quản lý bằng Docker Compose.
-
-Khi hệ thống mở rộng:
-
-Có thể tách các service sang server riêng.
-
-Sử dụng Redis để cache session và quản lý vị trí realtime.
-
-Thêm Monitoring Service để theo dõi log và hiệu năng.
-
+   . Mỗi service được đóng gói trong Docker container → quản lý bằng Docker Compose.
+   . Khi hệ thống mở rộng:
+   . Có thể tách các service sang server riêng.
+   . Sử dụng Redis để cache session và quản lý vị trí realtime.
+   . Thêm Monitoring Service để theo dõi log và hiệu năng.
 ---
 
 ## 3.5. Tóm tắt kiến trúc
