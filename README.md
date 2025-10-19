@@ -2,7 +2,8 @@
 
 ## 3.1. Mục tiêu thiết kế
 
-Hệ thống được xây dựng nhằm cung cấp một **ứng dụng đặt xe taxi trực tuyến** (tương tự Grab, Be hoặc Gojek ở mức cơ bản) giúp kết nối **người dùng** và **tài xế** theo thời gian thực.  
+Hệ thống được xây dựng nhằm cung cấp một **ứng dụng đặt xe taxi trực tuyến** (tương tự Grab, Be hoặc Gojek ở mức cơ bản) giúp kết nối **người dùng** và **tài xế** theo thời gian thực.
+Qua đó, hệ thống nhằm giúp người dùng đặt xe, tài xế nhận chuyến và hệ thống quản lý được toàn bộ quá trình hoạt động.
 Kiến trúc hệ thống được thiết kế theo **mô hình Microservices**, với mục tiêu:
 
 - Tăng khả năng **mở rộng** và **bảo trì**.  
