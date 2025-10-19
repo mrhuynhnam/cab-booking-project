@@ -1,6 +1,6 @@
-# 🧱 Chương 3: Thiết kế kiến trúc hệ thống
+# 🧱 Thiết kế kiến trúc hệ thống
 
-## 3.1. Mục tiêu thiết kế
+## Mục tiêu thiết kế
 
 Hệ thống được xây dựng nhằm cung cấp một **ứng dụng đặt xe taxi trực tuyến** (tương tự Grab, Be hoặc Gojek ở mức cơ bản) giúp kết nối **người dùng** và **tài xế** theo thời gian thực.
 Qua đó, hệ thống nhằm giúp người dùng đặt xe, tài xế nhận chuyến và hệ thống quản lý được toàn bộ quá trình hoạt động.
@@ -56,7 +56,7 @@ Kiến trúc hệ thống được thiết kế theo **mô hình Microservices**
 
 ---
 
-## 3.2. Kiến trúc tổng thể của hệ thống
+## Kiến trúc tổng thể của hệ thống
 
 Hệ thống được chia thành hai phần chính:
 
@@ -71,7 +71,7 @@ Hệ thống được chia thành hai phần chính:
 
 ---
 
-## 3.3. Sơ đồ kiến trúc hệ thống (Block Diagram)
+## Sơ đồ kiến trúc hệ thống (Block Diagram)
 ```mermaid
 graph TD
     A[ReactJS UI - Ứng dụng khách hàng và tài xế] -->|HTTP / HTTPS| B[API Gateway - Node.js / Nginx]
@@ -116,7 +116,7 @@ graph TD
 
 ---
 
-## 3.4. Sơ đồ luồng dữ liệu (Sequence Diagram)
+## Sơ đồ luồng dữ liệu (Sequence Diagram)
 
 ```mermaid
 sequenceDiagram
@@ -215,7 +215,7 @@ sequenceDiagram
       . Thêm Monitoring Service để theo dõi log và hiệu năng.
 ---
 
-## 3.5. Tóm tắt kiến trúc
+## Tóm tắt kiến trúc
 
 | Thành phần | Chức năng chính | Công nghệ sử dụng |
 |-------------|----------------|------------------|
@@ -231,7 +231,7 @@ sequenceDiagram
 
 ---
 
-## 3.6. Kết luận chương
+## Kết luận chương
 
 Kiến trúc Microservices giúp hệ thống:
 - Dễ mở rộng và bảo trì.  
