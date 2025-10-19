@@ -30,19 +30,19 @@ Hệ thống được chia thành hai phần chính:
 ## 3.3. Sơ đồ kiến trúc hệ thống (Block Diagram)
 ```mermaid
 graph TD
-    A[🧑‍💻 ReactJS UI<br/>(Ứng dụng khách hàng & tài xế)] -->|HTTP / HTTPS| B[🚪 API Gateway<br/>(Node.js / Nginx)]
+    A[ReactJS UI - Ứng dụng khách hàng và tài xế] -->|HTTP / HTTPS| B[API Gateway - Node.js / Nginx]
+    
+    B --> C1[User Service - Đăng ký, đăng nhập, hồ sơ người dùng]
+    B --> C2[Ride Service - Đặt xe, cập nhật trạng thái chuyến đi]
+    B --> C3[Driver Service - Trạng thái, vị trí tài xế]
+    B --> C4[Payment Service - Tính phí, xử lý thanh toán]
+    B --> C5[Notification Service - Thông báo realtime]
 
-    B --> C1[👤 User Service<br/>(Đăng ký, đăng nhập, hồ sơ người dùng)]
-    B --> C2[🚗 Ride Service<br/>(Đặt xe, cập nhật trạng thái chuyến đi)]
-    B --> C3[🧭 Driver Service<br/>(Trạng thái, vị trí tài xế)]
-    B --> C4[💳 Payment Service<br/>(Tính phí, xử lý thanh toán)]
-    B --> C5[🔔 Notification Service<br/>(Thông báo realtime – Socket.io/MQTT)]
-
-    C1 --> D1[(🗄️ MongoDB<br/>User DB)]
-    C2 --> D2[(🗄️ PostgreSQL<br/>Ride DB)]
-    C3 --> D3[(🗄️ MongoDB<br/>Driver DB)]
-    C4 --> D4[(🗄️ PostgreSQL<br/>Payment DB)]
-    C5 --> D5[(🗄️ Redis / Message Queue)]
+    C1 --> D1[(MongoDB - User DB)]
+    C2 --> D2[(PostgreSQL - Ride DB)]
+    C3 --> D3[(MongoDB - Driver DB)]
+    C4 --> D4[(PostgreSQL - Payment DB)]
+    C5 --> D5[(Redis / Message Queue)]
 
     C2 -->|Kiểm tra người dùng| C1
     C2 -->|Tìm tài xế| C3
