@@ -229,7 +229,7 @@ sequenceDiagram
 | **Payment Service** | Tính phí, xử lý thanh toán | Node.js, Stripe/MoMo API |
 | **Notification Service** | Thông báo realtime | Socket.io / MQTT |
 | **Database Layer** | Lưu trữ dữ liệu riêng cho từng service | MongoDB / PostgreSQL |
-| **Triển khai** | Tách biệt từng service, dễ mở rộng | Docker / Docker Compose |
+| **Triển khai** | Tách biệt từng service, dễ mở rộng | Docker / Docker Compose / Docker Swarm |
 
 ---
 
